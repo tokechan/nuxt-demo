@@ -12,7 +12,7 @@ export const PostSchema = defineMongooseModel({
             required: true,
         },
         parent: {
-            tyep: Schema.Types.ObjectId,
+            type: Schema.Types.ObjectId,
             ref: "Post",
             },
         },

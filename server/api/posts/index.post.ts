@@ -1,3 +1,5 @@
+import  { PostSchema } from "~/server/models/post.schema";
+
 export default defineEventHandler(async (event) => {
     const body = await readBody(event);
 
