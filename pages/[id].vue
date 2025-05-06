@@ -1,6 +1,6 @@
 <script setup lang="ts">
 const route = useRoute();
-const { data: post } = await useFetch<PostResponse>(
+const { data: post, refresh } = await useFetch<PostResponse>(
     `/api/posts/${route.params.id.toString()}`
 );
 </script>
@@ -15,6 +15,8 @@ const { data: post } = await useFetch<PostResponse>(
             :parent="post.parent"
             :createdAt="post.createdAt"
     />
-        <PostForm />
+        <PostForm  v-if="post" :parentId="post._id" />
     </main>
 </template>
+
+
