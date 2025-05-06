@@ -15,15 +15,6 @@ const { data: posts } = await useFetch<PostResponse[]>("/api/posts");
             :parent="post.parent"
             :createdAt="post.createdAt"
         />
-        <PostCard
-            v-for="post in posts"
-            :_id="post._id"
-            :name="post.name"
-            :text="post.text"
-            :parent="post.parent"
-            :createdAt="post.createdAt"
-    />
-        <PostCard />
-        <PostCard />
+        
     </main>
 </template>
