@@ -1,11 +1,10 @@
 <script setup lang="ts">
-const { data: posts } = await useFetch<PostResponse[]>("/api/posts");
+const { data: posts, refresh } = await useFetch<PostResponse[]>("/api/posts");
 </script>
 
 <template>
-
     <main class="flex flex-col gap-4">
-        <PostForm />
+        <PostForm @submit="refresh" />
 
         <PostCard 
             v-for="post in posts"
@@ -15,6 +14,5 @@ const { data: posts } = await useFetch<PostResponse[]>("/api/posts");
             :parent="post.parent"
             :createdAt="post.createdAt"
         />
-        
     </main>
 </template>
