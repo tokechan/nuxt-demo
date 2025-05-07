@@ -3,6 +3,7 @@ const { data: posts, refresh } = await useFetch<PostResponse[]>("/api/posts");
 </script>
 
 <template>
+    
     <main class="flex flex-col gap-4">
         <PostForm @submit="refresh" />
 
