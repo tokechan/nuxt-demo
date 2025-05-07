@@ -1,14 +1,9 @@
 <template>
-    <div class="container">
-        <slot />
+    <div>
+        <Header />
+        <main class="flex flex-col gap-4">
+            <NuxtPage />
+        </main>
+                
     </div>
 </template>
-
-<style scopod>
-
-.container {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 2rem 0;
-}
-</style>
